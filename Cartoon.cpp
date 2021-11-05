@@ -24,10 +24,11 @@
 
 	// Случайный ввод мультфильма
 	void Cartoon::InRnd() {
-		name_length = rand() % 20 + 1;
+		name_length = rand() % 28 + 1;
 		for (int i = 0; i < name_length; i++) {
 			name[i] = rand() % 26 + 'a';
 		}
+		date = rand() % 100 + 1920;
 		int t = rand() % 3 + 1;
 		switch (t) {
 		case 1:
@@ -45,7 +46,8 @@
 	// Вывод параметров мультфильма в форматируемый поток
 	void Cartoon::Out(ofstream& ofst) {
 		ofst << "Film name: " << name
-			<< "  Date of film: " << date << ' ';
+			<< "  Date of film: " << date << ' '
+			<< "It's Cartoon ";
 		ofst << "Type of Cartoon: ";
 		switch (type) {
 		case DRAWN:
