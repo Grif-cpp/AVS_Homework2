@@ -16,7 +16,7 @@
 
 	// Случайный ввод игрового фильма
 	void Gaming::InRnd() {
-		name_length = rand() % 20 + 1;
+		name_length = rand() % 28 + 1;
 		for (int i = 0; i < name_length; i++) {
 			name[i] = rand() % 26 + 'a';
 		}
