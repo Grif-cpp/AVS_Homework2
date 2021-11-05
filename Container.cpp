@@ -43,16 +43,15 @@
         while (len < size) {
             int k = rand() % 3 + 1;
             Film* fl;
-            switch (k) {
-            case 1:
+            if (k == 1) {
                 fl = new Gaming();
-            case 2:
+            } else if (k == 2) {
                 fl = new Cartoon();
-            case 3:
+            } else if(k == 3){
                 fl = new Documental();
             }
-            cont[len] = fl;
             fl->InRnd();
+            cont[len] = fl;
             len++;
         }
     }
@@ -63,7 +62,7 @@
         ofst << "Container contains " << len << " elements." << endl;
         for (int i = 0; i < len; i++) {
             ofst << i << ": ";
-            (cont[i])->Out(ofst);
+            (cont[i])->Out(ofst);   
         }
     }
 
